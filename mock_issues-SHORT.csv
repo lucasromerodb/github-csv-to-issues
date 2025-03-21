@@ -1,0 +1,6 @@
+title,body,label
+Fix payment processing bug when card is declined,,
+Improve map loading speed on mobile,Affects multiple users.,
+Add dark mode support for the app,This issue occurs intermittently.,documentation
+Add support for multiple payment methods,This issue occurs intermittently.,frontend
+Fix incorrect distance calculations,,wontfix

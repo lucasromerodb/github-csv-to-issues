@@ -1,0 +1,51 @@
+title,body,label
+Fix payment processing bug when card is declined,,
+Improve map loading speed on mobile,Affects multiple users.,
+Driver location updates are delayed,Affects multiple users.,
+Add dark mode support for the app,This issue occurs intermittently.,documentation
+User profile images are not loading correctly,This issue occurs intermittently.,wontfix
+Enhance ride fare estimation accuracy,This issue occurs intermittently.,
+Allow users to schedule rides in advance,Needs further investigation.,
+App crashes on iOS when opening messages,,
+Optimize database queries for ride history,This issue occurs intermittently.,
+Improve UI for trip summary screen,Needs further investigation.,backend
+Fix issue with GPS losing signal during a ride,,
+Ride request gets stuck in pending state,Affects multiple users.,
+Push notifications not received for ride updates,Affects multiple users.,bug
+Add support for multiple payment methods,This issue occurs intermittently.,frontend
+Improve error messages for failed transactions,,
+Fix broken deep links for ride sharing invites,Needs further investigation.,
+Improve caching for frequently visited locations,,
+Enhance driver rating system with comments,Affects multiple users.,
+Redesign signup flow for better UX,,backend
+Fix login issue when switching accounts,,wontfix
+Improve route selection for drivers,Needs further investigation.,
+Passengers can't see estimated arrival time,Affects multiple users.,
+Add 2FA for better security,,wontfix
+Fix time zone issue in scheduled rides,Affects multiple users.,
+Improve driver earnings report,,enhance
+Add night mode for better accessibility,,good first issue
+Users can't add new addresses to favorites,Affects multiple users.,
+Enable biometric login on Android,Needs further investigation.,
+Improve ride matching algorithm,,
+Ride history pagination is broken,,
+Improve search bar usability,This issue occurs intermittently.,
+Fix bug where ride requests disappear,Needs further investigation.,bug
+Drivers can't see passenger ratings,Needs further investigation.,
+App freezes when receiving ride request,,documentation
+Support Apple Pay as a payment option,Affects multiple users.,documentation
+Fix broken back button in ride details,This issue occurs intermittently.,
+Improve customer support response times,,
+Enhance in-app chat for better communication,Needs further investigation.,
+Fix UI bug on ride cancellation screen,Affects multiple users.,frontend
+Passengers not receiving ride receipts via email,Needs further investigation.,
+Improve verification process for new drivers,Needs further investigation.,
+Fix incorrect currency display for payments,Affects multiple users.,
+Ride filters not working as expected,Affects multiple users.,backend
+Add estimated fare breakdown before booking,Affects multiple users.,
+Fix driver availability toggle issue,Affects multiple users.,wontfix
+Improve loading times for ride history,Affects multiple users.,
+Fix incorrect distance calculations,,wontfix
+Users can't delete their account,This issue occurs intermittently.,
+Fix UI bug on promotions screen,Needs further investigation.,documentation
+Improve feedback system for ride disputes,Affects multiple users.,enhance
