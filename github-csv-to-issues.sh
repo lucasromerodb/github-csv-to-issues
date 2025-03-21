@@ -15,7 +15,7 @@ then
 fi
 
 # Ensure issues.csv exists
-read -p "Enter CSV file path: " CSV_FILE_USER_INPUT
+read -p "📝 Enter CSV file path: " CSV_FILE_USER_INPUT
 CSV_FILE=$CSV_FILE_USER_INPUT
 if [ ! -f "$CSV_FILE" ]; then
     echo "Error: CSV file '$CSV_FILE' not found."
@@ -23,7 +23,7 @@ if [ ! -f "$CSV_FILE" ]; then
 fi
 
 # Ask for repository input as a URL
-read -p "Enter GitHub repository URL: " REPO_URL_USER_INPUT
+read -p "🐙 Enter GitHub repository URL: " REPO_URL_USER_INPUT
 
 # Extract org and repo from URL
 ORG_REPO=$(echo "$REPO_URL_USER_INPUT" | sed -E 's|https://github.com/||' | sed -E 's|/.*$||')
@@ -31,8 +31,8 @@ REPO_NAME=$(echo "$REPO_URL_USER_INPUT" | sed -E 's|https://github.com/[^/]*/||'
 REPO_URL="https://github.com/$ORG_REPO/$REPO_NAME"
 
 echo "--------------------------------"
-echo "🐙 REPO_URL: $REPO_URL"
-echo "🐙 REPO_NAME: $REPO_NAME"
+echo "🔗 REPO_URL: $REPO_URL"
+echo "📁 REPO_NAME: $REPO_NAME"
 echo "--------------------------------"
 
 # Ensure authentication with proper scopes
@@ -58,7 +58,7 @@ while IFS="," read -r title body label; do
 
     echo ""
     echo "-------------------"
-    echo "🐙 PROCESSING ISSUE"
+    echo "🖍️ PROCESSING ISSUE"
 
     # Normalize input
     title=$(echo "$title" | tr -d '\r')

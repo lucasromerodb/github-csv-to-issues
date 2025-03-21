@@ -26,7 +26,7 @@ A bash script utility that enables bulk importing of issues into GitHub reposito
 1. Clone this repository or download the script
 2. Make the script executable:
    ```bash
-   chmod +x csv-to-issues.sh
+   chmod +x github-csv-to-issues.sh
    ```
 
 ## 📄 CSV File Format
@@ -56,8 +56,9 @@ Fix incorrect distance calculations,,wontfix
 
 2. Run the script:
    ```bash
-   ./csv-to-issues.sh
+   npm run import
    ```
+   > or use the script directly: `./github-csv-to-issues.sh`
 
 3. When prompted, enter your CSV file path:
    ```bash
@@ -72,13 +73,13 @@ Fix incorrect distance calculations,,wontfix
 ## 📝 Example
 
 ```bash
-./csv-to-issues.sh
+./github-csv-to-issues.sh
 
-Enter CSV file path: issues.csv
-Enter GitHub repository URL: https://github.com/username/myrepo
+📝 Enter CSV file path: issues.csv
+🐙 Enter GitHub repository URL: https://github.com/username/myrepo
 --------------------------------
-🐙 REPO_URL: https://github.com/username/myrepo
-🐙 REPO_NAME: myrepo
+🔗 REPO_URL: https://github.com/username/myrepo
+📁 REPO_NAME: myrepo
 --------------------------------
 
 ! First copy your one-time code: ABCD-1234
@@ -86,7 +87,7 @@ Press Enter to open https://github.com/login/device in your browser...
 ✓ Authentication complete.
 
 -------------------
-🐙 PROCESSING ISSUE
+🖍️ PROCESSING ISSUE
 
 Creating issue in username/myrepo
 

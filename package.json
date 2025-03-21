@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A bash script utility that enables bulk importing of issues into GitHub repositories from a CSV file.",
   "scripts": {
-    "import": "./csv-to-issues.sh"
+    "import": "./github-csv-to-issues.sh"
   },
   "repository": {
     "type": "git",
