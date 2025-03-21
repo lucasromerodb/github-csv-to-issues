@@ -1,0 +1,18 @@
+{
+  "name": "github-csv-to-issues",
+  "version": "1.0.0",
+  "description": "A bash script utility that enables bulk importing of issues into GitHub repositories from a CSV file.",
+  "scripts": {
+    "import": "./csv-to-issues.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasromerodb/github-csv-to-issues.git"
+  },
+  "author": "lucasromerodb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasromerodb/github-csv-to-issues/issues"
+  },
+  "homepage": "https://github.com/lucasromerodb/github-csv-to-issues#readme"
+}
