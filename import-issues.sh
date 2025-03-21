@@ -15,7 +15,8 @@ then
 fi
 
 # Ensure issues.csv exists
-CSV_FILE="mock_issues-SHORT.csv"
+read -p "Enter CSV file path: " CSV_FILE_USER_INPUT
+CSV_FILE=$CSV_FILE_USER_INPUT
 if [ ! -f "$CSV_FILE" ]; then
     echo "Error: CSV file '$CSV_FILE' not found."
     exit 1
