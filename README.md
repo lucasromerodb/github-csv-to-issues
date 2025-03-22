@@ -76,13 +76,16 @@ Fix incorrect distance calculations,,wontfix
 ./github-csv-to-issues.sh
 
 📝 Enter CSV file path: issues.csv
-🐙 Enter GitHub repository URL: https://github.com/username/myrepo
+📍 Use current repository (https://github.com/username/current-repo)? [Y/n] n
+🐙 Enter GitHub repository URL: https://github.com/username/myrepo # only if you don't want to use the current repository
 --------------------------------
 🔗 REPO_URL: https://github.com/username/myrepo
 📁 REPO_NAME: myrepo
 --------------------------------
+📊 Total issues to create: 50
+--------------------------------
 
-! First copy your one-time code: ABCD-1234
+! First copy your one-time code: ABCD-1234 # only if you don't want to use the current repository
 Press Enter to open https://github.com/login/device in your browser...
 ✓ Authentication complete.
 

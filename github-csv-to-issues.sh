@@ -22,8 +22,35 @@ if [ ! -f "$CSV_FILE" ]; then
     exit 1
 fi
 
-# Ask for repository input as a URL
-read -p "🐙 Enter GitHub repository URL: " REPO_URL_USER_INPUT
+# Check if we're in a GitHub repository and get current repo URL if available
+if git rev-parse --git-dir > /dev/null 2>&1; then
+    CURRENT_REMOTE_URL=$(git config --get remote.origin.url)
+
+    # Check if it's a GitHub URL
+    if [[ $CURRENT_REMOTE_URL == *"github.com"* ]]; then
+        # Convert SSH URL to HTTPS if needed
+        if [[ $CURRENT_REMOTE_URL == git@* ]]; then
+            CURRENT_REPO=$(echo $CURRENT_REMOTE_URL | sed 's/git@github.com:/https:\/\/github.com\//' | sed 's/\.git$//')
+        else
+            CURRENT_REPO=$CURRENT_REMOTE_URL
+        fi
+
+        read -p "📍 Use current repository ($CURRENT_REPO)? [Y/n] " USE_CURRENT
+        if [[ $USE_CURRENT =~ ^[Yy]$ ]] || [[ -z $USE_CURRENT ]]; then
+            REPO_URL_USER_INPUT=$CURRENT_REPO
+            echo "Using current repository: $REPO_URL_USER_INPUT"
+        else
+            read -p "🐙 Enter GitHub repository URL: " REPO_URL_USER_INPUT
+            gh auth refresh -s project
+        fi
+    else
+        read -p "🐙 Enter GitHub repository URL: " REPO_URL_USER_INPUT
+        gh auth refresh -s project
+    fi
+else
+    read -p "🐙 Enter GitHub repository URL: " REPO_URL_USER_INPUT
+    gh auth refresh -s project
+fi
 
 # Extract org and repo from URL
 ORG_REPO=$(echo "$REPO_URL_USER_INPUT" | sed -E 's|https://github.com/||' | sed -E 's|/.*$||')
@@ -35,9 +62,6 @@ echo "🔗 REPO_URL: $REPO_URL"
 echo "📁 REPO_NAME: $REPO_NAME"
 echo "--------------------------------"
 
-# Ensure authentication with proper scopes
-gh auth refresh -s project
-
 # Function to check and create label if not exists
 check_and_create_label() {
     local label=$(echo "$1" | tr -d '\r') # Normalize label
@@ -48,6 +72,12 @@ check_and_create_label() {
         gh label create "$label" --repo "$REPO_URL"
     fi
 }
+
+# Count total rows in CSV (excluding header)
+TOTAL_ROWS=$(tail -n +2 "$CSV_FILE" | wc -l)
+echo "📊 Total issues to create: $TOTAL_ROWS"
+echo "--------------------------------"
+
 
 # Read and upload issues from CSV
 while IFS="," read -r title body label; do
